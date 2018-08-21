@@ -80,8 +80,9 @@ ${SUBJECT_LENGTH}/%.txt:	${SUBJECT_FASTA}/%.fa
 ${BEST_BLAST_ALIGNMENT}/%.txt:	${BLAST_OUTPUT}/%.txt
 	set -x
 	mkdir -p `dirname "$target"`
-	choose-best-alignment \
+	grep -F plus \
 		${prereq} \
+	| choose-best-alignment \
 	> "${target}.build" \
 	&& mv "${target}.build" $target
 

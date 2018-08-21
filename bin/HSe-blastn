@@ -6,6 +6,7 @@ blastn
 	-query ${1} # query
 	-db ${2} # subject
 	-task blastn
+	-strand plus
 	-reward 1
 	-penalty -1
 	-gapopen 2
